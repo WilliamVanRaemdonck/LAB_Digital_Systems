@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../DS2_Project.srcs/sources_1/ip/blk_mem_gen_0_1/blk_mem_gen_0_sim_netlist.vhdl" \
+"../../../../DS2_Project.srcs/sources_1/new/AdresCounter.vhd" \
+"../../../../DS2_Project.srcs/sources_1/new/LedDriver.vhd" \
+"../../../../DS2_Project.srcs/sources_1/new/Top.vhd" \
+"../../../../DS2_Project.srcs/sim_1/new/Top_tb.vhd" \
+
+# Do not sort compile order
+nosort

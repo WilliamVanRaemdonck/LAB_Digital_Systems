@@ -1,0 +1,1390 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Mon Dec 19 14:44:01 2022
+| Host         : W-Acer-Laptop running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -file Top_timing_summary_routed.rpt -pb Top_timing_summary_routed.pb -rpx Top_timing_summary_routed.rpx -warn_on_violation
+| Design       : Top
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  false
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There are 17 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 2 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      4.420        0.000                      0                  607        0.132        0.000                      0                  607        4.500        0.000                       0                   218  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock        Waveform(ns)       Period(ns)      Frequency(MHz)
+-----        ------------       ----------      --------------
+sys_clk_pin  {0.000 5.000}      10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+sys_clk_pin         4.420        0.000                      0                  607        0.132        0.000                      0                  607        4.500        0.000                       0                   218  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  sys_clk_pin
+  To Clock:  sys_clk_pin
+
+Setup :            0  Failing Endpoints,  Worst Slack        4.420ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.132ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        4.500ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             4.420ns  (required time - arrival time)
+  Source:                 LedDriver1/teller50s_reg[28]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LedDriver1/LedAdresBuffer_reg[5]/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        5.064ns  (logic 1.242ns (24.526%)  route 3.822ns (75.474%))
+  Logic Levels:           4  (LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.052ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.775ns = ( 14.775 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.087ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.566     5.087    LedDriver1/clk_IBUF_BUFG
+    SLICE_X50Y35         FDRE                                         r  LedDriver1/teller50s_reg[28]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X50Y35         FDRE (Prop_fdre_C_Q)         0.518     5.605 f  LedDriver1/teller50s_reg[28]/Q
+                         net (fo=2, routed)           1.255     6.860    LedDriver1/teller50s_reg_n_0_[28]
+    SLICE_X51Y33         LUT6 (Prop_lut6_I1_O)        0.124     6.984 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_14/O
+                         net (fo=1, routed)           0.577     7.560    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_14_n_0
+    SLICE_X51Y31         LUT5 (Prop_lut5_I0_O)        0.150     7.710 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_7/O
+                         net (fo=1, routed)           0.299     8.009    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_7_n_0
+    SLICE_X51Y32         LUT6 (Prop_lut6_I0_O)        0.326     8.335 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_3/O
+                         net (fo=4, routed)           0.721     9.056    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_3_n_0
+    SLICE_X45Y33         LUT4 (Prop_lut4_I2_O)        0.124     9.180 r  LedDriver1/LedAdresBuffer[31]_i_1/O
+                         net (fo=32, routed)          0.971    10.151    LedDriver1/LedAdresBuffer[31]_i_1_n_0
+    SLICE_X44Y27         FDRE                                         r  LedDriver1/LedAdresBuffer_reg[5]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.434    14.775    LedDriver1/clk_IBUF_BUFG
+    SLICE_X44Y27         FDRE                                         r  LedDriver1/LedAdresBuffer_reg[5]/C
+                         clock pessimism              0.260    15.035    
+                         clock uncertainty           -0.035    15.000    
+    SLICE_X44Y27         FDRE (Setup_fdre_C_R)       -0.429    14.571    LedDriver1/LedAdresBuffer_reg[5]
+  -------------------------------------------------------------------
+                         required time                         14.571    
+                         arrival time                         -10.151    
+  -------------------------------------------------------------------
+                         slack                                  4.420    
+
+Slack (MET) :             4.420ns  (required time - arrival time)
+  Source:                 LedDriver1/teller50s_reg[28]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LedDriver1/LedAdresBuffer_reg[6]/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        5.064ns  (logic 1.242ns (24.526%)  route 3.822ns (75.474%))
+  Logic Levels:           4  (LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.052ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.775ns = ( 14.775 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.087ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.566     5.087    LedDriver1/clk_IBUF_BUFG
+    SLICE_X50Y35         FDRE                                         r  LedDriver1/teller50s_reg[28]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X50Y35         FDRE (Prop_fdre_C_Q)         0.518     5.605 f  LedDriver1/teller50s_reg[28]/Q
+                         net (fo=2, routed)           1.255     6.860    LedDriver1/teller50s_reg_n_0_[28]
+    SLICE_X51Y33         LUT6 (Prop_lut6_I1_O)        0.124     6.984 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_14/O
+                         net (fo=1, routed)           0.577     7.560    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_14_n_0
+    SLICE_X51Y31         LUT5 (Prop_lut5_I0_O)        0.150     7.710 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_7/O
+                         net (fo=1, routed)           0.299     8.009    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_7_n_0
+    SLICE_X51Y32         LUT6 (Prop_lut6_I0_O)        0.326     8.335 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_3/O
+                         net (fo=4, routed)           0.721     9.056    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_3_n_0
+    SLICE_X45Y33         LUT4 (Prop_lut4_I2_O)        0.124     9.180 r  LedDriver1/LedAdresBuffer[31]_i_1/O
+                         net (fo=32, routed)          0.971    10.151    LedDriver1/LedAdresBuffer[31]_i_1_n_0
+    SLICE_X44Y27         FDRE                                         r  LedDriver1/LedAdresBuffer_reg[6]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.434    14.775    LedDriver1/clk_IBUF_BUFG
+    SLICE_X44Y27         FDRE                                         r  LedDriver1/LedAdresBuffer_reg[6]/C
+                         clock pessimism              0.260    15.035    
+                         clock uncertainty           -0.035    15.000    
+    SLICE_X44Y27         FDRE (Setup_fdre_C_R)       -0.429    14.571    LedDriver1/LedAdresBuffer_reg[6]
+  -------------------------------------------------------------------
+                         required time                         14.571    
+                         arrival time                         -10.151    
+  -------------------------------------------------------------------
+                         slack                                  4.420    
+
+Slack (MET) :             4.420ns  (required time - arrival time)
+  Source:                 LedDriver1/teller50s_reg[28]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LedDriver1/LedAdresBuffer_reg[7]/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        5.064ns  (logic 1.242ns (24.526%)  route 3.822ns (75.474%))
+  Logic Levels:           4  (LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.052ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.775ns = ( 14.775 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.087ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.566     5.087    LedDriver1/clk_IBUF_BUFG
+    SLICE_X50Y35         FDRE                                         r  LedDriver1/teller50s_reg[28]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X50Y35         FDRE (Prop_fdre_C_Q)         0.518     5.605 f  LedDriver1/teller50s_reg[28]/Q
+                         net (fo=2, routed)           1.255     6.860    LedDriver1/teller50s_reg_n_0_[28]
+    SLICE_X51Y33         LUT6 (Prop_lut6_I1_O)        0.124     6.984 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_14/O
+                         net (fo=1, routed)           0.577     7.560    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_14_n_0
+    SLICE_X51Y31         LUT5 (Prop_lut5_I0_O)        0.150     7.710 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_7/O
+                         net (fo=1, routed)           0.299     8.009    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_7_n_0
+    SLICE_X51Y32         LUT6 (Prop_lut6_I0_O)        0.326     8.335 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_3/O
+                         net (fo=4, routed)           0.721     9.056    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_3_n_0
+    SLICE_X45Y33         LUT4 (Prop_lut4_I2_O)        0.124     9.180 r  LedDriver1/LedAdresBuffer[31]_i_1/O
+                         net (fo=32, routed)          0.971    10.151    LedDriver1/LedAdresBuffer[31]_i_1_n_0
+    SLICE_X44Y27         FDRE                                         r  LedDriver1/LedAdresBuffer_reg[7]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.434    14.775    LedDriver1/clk_IBUF_BUFG
+    SLICE_X44Y27         FDRE                                         r  LedDriver1/LedAdresBuffer_reg[7]/C
+                         clock pessimism              0.260    15.035    
+                         clock uncertainty           -0.035    15.000    
+    SLICE_X44Y27         FDRE (Setup_fdre_C_R)       -0.429    14.571    LedDriver1/LedAdresBuffer_reg[7]
+  -------------------------------------------------------------------
+                         required time                         14.571    
+                         arrival time                         -10.151    
+  -------------------------------------------------------------------
+                         slack                                  4.420    
+
+Slack (MET) :             4.420ns  (required time - arrival time)
+  Source:                 LedDriver1/teller50s_reg[28]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LedDriver1/LedAdresBuffer_reg[8]/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        5.064ns  (logic 1.242ns (24.526%)  route 3.822ns (75.474%))
+  Logic Levels:           4  (LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.052ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.775ns = ( 14.775 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.087ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.566     5.087    LedDriver1/clk_IBUF_BUFG
+    SLICE_X50Y35         FDRE                                         r  LedDriver1/teller50s_reg[28]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X50Y35         FDRE (Prop_fdre_C_Q)         0.518     5.605 f  LedDriver1/teller50s_reg[28]/Q
+                         net (fo=2, routed)           1.255     6.860    LedDriver1/teller50s_reg_n_0_[28]
+    SLICE_X51Y33         LUT6 (Prop_lut6_I1_O)        0.124     6.984 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_14/O
+                         net (fo=1, routed)           0.577     7.560    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_14_n_0
+    SLICE_X51Y31         LUT5 (Prop_lut5_I0_O)        0.150     7.710 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_7/O
+                         net (fo=1, routed)           0.299     8.009    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_7_n_0
+    SLICE_X51Y32         LUT6 (Prop_lut6_I0_O)        0.326     8.335 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_3/O
+                         net (fo=4, routed)           0.721     9.056    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_3_n_0
+    SLICE_X45Y33         LUT4 (Prop_lut4_I2_O)        0.124     9.180 r  LedDriver1/LedAdresBuffer[31]_i_1/O
+                         net (fo=32, routed)          0.971    10.151    LedDriver1/LedAdresBuffer[31]_i_1_n_0
+    SLICE_X44Y27         FDRE                                         r  LedDriver1/LedAdresBuffer_reg[8]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.434    14.775    LedDriver1/clk_IBUF_BUFG
+    SLICE_X44Y27         FDRE                                         r  LedDriver1/LedAdresBuffer_reg[8]/C
+                         clock pessimism              0.260    15.035    
+                         clock uncertainty           -0.035    15.000    
+    SLICE_X44Y27         FDRE (Setup_fdre_C_R)       -0.429    14.571    LedDriver1/LedAdresBuffer_reg[8]
+  -------------------------------------------------------------------
+                         required time                         14.571    
+                         arrival time                         -10.151    
+  -------------------------------------------------------------------
+                         slack                                  4.420    
+
+Slack (MET) :             4.556ns  (required time - arrival time)
+  Source:                 LedDriver1/LedAdresBuffer_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LedDriver1/Bit_counter_reg[29]/CE
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        5.176ns  (logic 1.451ns (28.032%)  route 3.725ns (71.968%))
+  Logic Levels:           5  (CARRY4=3 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.787ns = ( 14.787 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.074ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.553     5.074    LedDriver1/clk_IBUF_BUFG
+    SLICE_X44Y28         FDRE                                         r  LedDriver1/LedAdresBuffer_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y28         FDRE (Prop_fdre_C_Q)         0.456     5.530 f  LedDriver1/LedAdresBuffer_reg[9]/Q
+                         net (fo=3, routed)           1.259     6.789    LedDriver1/LedAdresBuffer_reg_n_0_[9]
+    SLICE_X46Y30         LUT2 (Prop_lut2_I0_O)        0.124     6.913 r  LedDriver1/FSM_State_LedDriver1_carry__0_i_8/O
+                         net (fo=1, routed)           0.000     6.913    LedDriver1/FSM_State_LedDriver1_carry__0_i_8_n_0
+    SLICE_X46Y30         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     7.426 r  LedDriver1/FSM_State_LedDriver1_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.426    LedDriver1/FSM_State_LedDriver1_carry__0_n_0
+    SLICE_X46Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.543 r  LedDriver1/FSM_State_LedDriver1_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.543    LedDriver1/FSM_State_LedDriver1_carry__1_n_0
+    SLICE_X46Y32         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.660 f  LedDriver1/FSM_State_LedDriver1_carry__2/CO[3]
+                         net (fo=6, routed)           1.066     8.726    LedDriver1/FSM_State_LedDriver1_carry__2_n_0
+    SLICE_X44Y35         LUT4 (Prop_lut4_I3_O)        0.124     8.850 r  LedDriver1/Bit_counter[4]_i_1/O
+                         net (fo=32, routed)          1.401    10.250    LedDriver1/Bit_counter[4]_i_1_n_0
+    SLICE_X40Y41         FDRE                                         r  LedDriver1/Bit_counter_reg[29]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.446    14.787    LedDriver1/clk_IBUF_BUFG
+    SLICE_X40Y41         FDRE                                         r  LedDriver1/Bit_counter_reg[29]/C
+                         clock pessimism              0.260    15.047    
+                         clock uncertainty           -0.035    15.012    
+    SLICE_X40Y41         FDRE (Setup_fdre_C_CE)      -0.205    14.807    LedDriver1/Bit_counter_reg[29]
+  -------------------------------------------------------------------
+                         required time                         14.807    
+                         arrival time                         -10.250    
+  -------------------------------------------------------------------
+                         slack                                  4.556    
+
+Slack (MET) :             4.556ns  (required time - arrival time)
+  Source:                 LedDriver1/LedAdresBuffer_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LedDriver1/Bit_counter_reg[30]/CE
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        5.176ns  (logic 1.451ns (28.032%)  route 3.725ns (71.968%))
+  Logic Levels:           5  (CARRY4=3 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.787ns = ( 14.787 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.074ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.553     5.074    LedDriver1/clk_IBUF_BUFG
+    SLICE_X44Y28         FDRE                                         r  LedDriver1/LedAdresBuffer_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y28         FDRE (Prop_fdre_C_Q)         0.456     5.530 f  LedDriver1/LedAdresBuffer_reg[9]/Q
+                         net (fo=3, routed)           1.259     6.789    LedDriver1/LedAdresBuffer_reg_n_0_[9]
+    SLICE_X46Y30         LUT2 (Prop_lut2_I0_O)        0.124     6.913 r  LedDriver1/FSM_State_LedDriver1_carry__0_i_8/O
+                         net (fo=1, routed)           0.000     6.913    LedDriver1/FSM_State_LedDriver1_carry__0_i_8_n_0
+    SLICE_X46Y30         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     7.426 r  LedDriver1/FSM_State_LedDriver1_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.426    LedDriver1/FSM_State_LedDriver1_carry__0_n_0
+    SLICE_X46Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.543 r  LedDriver1/FSM_State_LedDriver1_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.543    LedDriver1/FSM_State_LedDriver1_carry__1_n_0
+    SLICE_X46Y32         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.660 f  LedDriver1/FSM_State_LedDriver1_carry__2/CO[3]
+                         net (fo=6, routed)           1.066     8.726    LedDriver1/FSM_State_LedDriver1_carry__2_n_0
+    SLICE_X44Y35         LUT4 (Prop_lut4_I3_O)        0.124     8.850 r  LedDriver1/Bit_counter[4]_i_1/O
+                         net (fo=32, routed)          1.401    10.250    LedDriver1/Bit_counter[4]_i_1_n_0
+    SLICE_X40Y41         FDRE                                         r  LedDriver1/Bit_counter_reg[30]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.446    14.787    LedDriver1/clk_IBUF_BUFG
+    SLICE_X40Y41         FDRE                                         r  LedDriver1/Bit_counter_reg[30]/C
+                         clock pessimism              0.260    15.047    
+                         clock uncertainty           -0.035    15.012    
+    SLICE_X40Y41         FDRE (Setup_fdre_C_CE)      -0.205    14.807    LedDriver1/Bit_counter_reg[30]
+  -------------------------------------------------------------------
+                         required time                         14.807    
+                         arrival time                         -10.250    
+  -------------------------------------------------------------------
+                         slack                                  4.556    
+
+Slack (MET) :             4.556ns  (required time - arrival time)
+  Source:                 LedDriver1/LedAdresBuffer_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LedDriver1/Bit_counter_reg[31]/CE
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        5.176ns  (logic 1.451ns (28.032%)  route 3.725ns (71.968%))
+  Logic Levels:           5  (CARRY4=3 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.787ns = ( 14.787 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.074ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.553     5.074    LedDriver1/clk_IBUF_BUFG
+    SLICE_X44Y28         FDRE                                         r  LedDriver1/LedAdresBuffer_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y28         FDRE (Prop_fdre_C_Q)         0.456     5.530 f  LedDriver1/LedAdresBuffer_reg[9]/Q
+                         net (fo=3, routed)           1.259     6.789    LedDriver1/LedAdresBuffer_reg_n_0_[9]
+    SLICE_X46Y30         LUT2 (Prop_lut2_I0_O)        0.124     6.913 r  LedDriver1/FSM_State_LedDriver1_carry__0_i_8/O
+                         net (fo=1, routed)           0.000     6.913    LedDriver1/FSM_State_LedDriver1_carry__0_i_8_n_0
+    SLICE_X46Y30         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     7.426 r  LedDriver1/FSM_State_LedDriver1_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.426    LedDriver1/FSM_State_LedDriver1_carry__0_n_0
+    SLICE_X46Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.543 r  LedDriver1/FSM_State_LedDriver1_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.543    LedDriver1/FSM_State_LedDriver1_carry__1_n_0
+    SLICE_X46Y32         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.660 f  LedDriver1/FSM_State_LedDriver1_carry__2/CO[3]
+                         net (fo=6, routed)           1.066     8.726    LedDriver1/FSM_State_LedDriver1_carry__2_n_0
+    SLICE_X44Y35         LUT4 (Prop_lut4_I3_O)        0.124     8.850 r  LedDriver1/Bit_counter[4]_i_1/O
+                         net (fo=32, routed)          1.401    10.250    LedDriver1/Bit_counter[4]_i_1_n_0
+    SLICE_X40Y41         FDRE                                         r  LedDriver1/Bit_counter_reg[31]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.446    14.787    LedDriver1/clk_IBUF_BUFG
+    SLICE_X40Y41         FDRE                                         r  LedDriver1/Bit_counter_reg[31]/C
+                         clock pessimism              0.260    15.047    
+                         clock uncertainty           -0.035    15.012    
+    SLICE_X40Y41         FDRE (Setup_fdre_C_CE)      -0.205    14.807    LedDriver1/Bit_counter_reg[31]
+  -------------------------------------------------------------------
+                         required time                         14.807    
+                         arrival time                         -10.250    
+  -------------------------------------------------------------------
+                         slack                                  4.556    
+
+Slack (MET) :             4.561ns  (required time - arrival time)
+  Source:                 LedDriver1/teller50s_reg[28]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LedDriver1/LedAdresBuffer_reg[17]/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.926ns  (logic 1.242ns (25.215%)  route 3.684ns (74.785%))
+  Logic Levels:           4  (LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.778ns = ( 14.778 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.087ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.566     5.087    LedDriver1/clk_IBUF_BUFG
+    SLICE_X50Y35         FDRE                                         r  LedDriver1/teller50s_reg[28]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X50Y35         FDRE (Prop_fdre_C_Q)         0.518     5.605 f  LedDriver1/teller50s_reg[28]/Q
+                         net (fo=2, routed)           1.255     6.860    LedDriver1/teller50s_reg_n_0_[28]
+    SLICE_X51Y33         LUT6 (Prop_lut6_I1_O)        0.124     6.984 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_14/O
+                         net (fo=1, routed)           0.577     7.560    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_14_n_0
+    SLICE_X51Y31         LUT5 (Prop_lut5_I0_O)        0.150     7.710 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_7/O
+                         net (fo=1, routed)           0.299     8.009    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_7_n_0
+    SLICE_X51Y32         LUT6 (Prop_lut6_I0_O)        0.326     8.335 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_3/O
+                         net (fo=4, routed)           0.721     9.056    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_3_n_0
+    SLICE_X45Y33         LUT4 (Prop_lut4_I2_O)        0.124     9.180 r  LedDriver1/LedAdresBuffer[31]_i_1/O
+                         net (fo=32, routed)          0.833    10.013    LedDriver1/LedAdresBuffer[31]_i_1_n_0
+    SLICE_X44Y30         FDRE                                         r  LedDriver1/LedAdresBuffer_reg[17]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.437    14.778    LedDriver1/clk_IBUF_BUFG
+    SLICE_X44Y30         FDRE                                         r  LedDriver1/LedAdresBuffer_reg[17]/C
+                         clock pessimism              0.260    15.038    
+                         clock uncertainty           -0.035    15.003    
+    SLICE_X44Y30         FDRE (Setup_fdre_C_R)       -0.429    14.574    LedDriver1/LedAdresBuffer_reg[17]
+  -------------------------------------------------------------------
+                         required time                         14.574    
+                         arrival time                         -10.013    
+  -------------------------------------------------------------------
+                         slack                                  4.561    
+
+Slack (MET) :             4.561ns  (required time - arrival time)
+  Source:                 LedDriver1/teller50s_reg[28]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LedDriver1/LedAdresBuffer_reg[18]/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.926ns  (logic 1.242ns (25.215%)  route 3.684ns (74.785%))
+  Logic Levels:           4  (LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.778ns = ( 14.778 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.087ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.566     5.087    LedDriver1/clk_IBUF_BUFG
+    SLICE_X50Y35         FDRE                                         r  LedDriver1/teller50s_reg[28]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X50Y35         FDRE (Prop_fdre_C_Q)         0.518     5.605 f  LedDriver1/teller50s_reg[28]/Q
+                         net (fo=2, routed)           1.255     6.860    LedDriver1/teller50s_reg_n_0_[28]
+    SLICE_X51Y33         LUT6 (Prop_lut6_I1_O)        0.124     6.984 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_14/O
+                         net (fo=1, routed)           0.577     7.560    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_14_n_0
+    SLICE_X51Y31         LUT5 (Prop_lut5_I0_O)        0.150     7.710 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_7/O
+                         net (fo=1, routed)           0.299     8.009    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_7_n_0
+    SLICE_X51Y32         LUT6 (Prop_lut6_I0_O)        0.326     8.335 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_3/O
+                         net (fo=4, routed)           0.721     9.056    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_3_n_0
+    SLICE_X45Y33         LUT4 (Prop_lut4_I2_O)        0.124     9.180 r  LedDriver1/LedAdresBuffer[31]_i_1/O
+                         net (fo=32, routed)          0.833    10.013    LedDriver1/LedAdresBuffer[31]_i_1_n_0
+    SLICE_X44Y30         FDRE                                         r  LedDriver1/LedAdresBuffer_reg[18]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.437    14.778    LedDriver1/clk_IBUF_BUFG
+    SLICE_X44Y30         FDRE                                         r  LedDriver1/LedAdresBuffer_reg[18]/C
+                         clock pessimism              0.260    15.038    
+                         clock uncertainty           -0.035    15.003    
+    SLICE_X44Y30         FDRE (Setup_fdre_C_R)       -0.429    14.574    LedDriver1/LedAdresBuffer_reg[18]
+  -------------------------------------------------------------------
+                         required time                         14.574    
+                         arrival time                         -10.013    
+  -------------------------------------------------------------------
+                         slack                                  4.561    
+
+Slack (MET) :             4.561ns  (required time - arrival time)
+  Source:                 LedDriver1/teller50s_reg[28]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LedDriver1/LedAdresBuffer_reg[19]/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.926ns  (logic 1.242ns (25.215%)  route 3.684ns (74.785%))
+  Logic Levels:           4  (LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.778ns = ( 14.778 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.087ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.566     5.087    LedDriver1/clk_IBUF_BUFG
+    SLICE_X50Y35         FDRE                                         r  LedDriver1/teller50s_reg[28]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X50Y35         FDRE (Prop_fdre_C_Q)         0.518     5.605 f  LedDriver1/teller50s_reg[28]/Q
+                         net (fo=2, routed)           1.255     6.860    LedDriver1/teller50s_reg_n_0_[28]
+    SLICE_X51Y33         LUT6 (Prop_lut6_I1_O)        0.124     6.984 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_14/O
+                         net (fo=1, routed)           0.577     7.560    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_14_n_0
+    SLICE_X51Y31         LUT5 (Prop_lut5_I0_O)        0.150     7.710 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_7/O
+                         net (fo=1, routed)           0.299     8.009    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_7_n_0
+    SLICE_X51Y32         LUT6 (Prop_lut6_I0_O)        0.326     8.335 f  LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_3/O
+                         net (fo=4, routed)           0.721     9.056    LedDriver1/FSM_sequential_FSM_State_LedDriver[1]_i_3_n_0
+    SLICE_X45Y33         LUT4 (Prop_lut4_I2_O)        0.124     9.180 r  LedDriver1/LedAdresBuffer[31]_i_1/O
+                         net (fo=32, routed)          0.833    10.013    LedDriver1/LedAdresBuffer[31]_i_1_n_0
+    SLICE_X44Y30         FDRE                                         r  LedDriver1/LedAdresBuffer_reg[19]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         1.437    14.778    LedDriver1/clk_IBUF_BUFG
+    SLICE_X44Y30         FDRE                                         r  LedDriver1/LedAdresBuffer_reg[19]/C
+                         clock pessimism              0.260    15.038    
+                         clock uncertainty           -0.035    15.003    
+    SLICE_X44Y30         FDRE (Setup_fdre_C_R)       -0.429    14.574    LedDriver1/LedAdresBuffer_reg[19]
+  -------------------------------------------------------------------
+                         required time                         14.574    
+                         arrival time                         -10.013    
+  -------------------------------------------------------------------
+                         slack                                  4.561    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.132ns  (arrival time - required time)
+  Source:                 AdresCounter1/AdresBuffer_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[9]
+                            (rising edge-triggered cell RAMB18E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.392ns  (logic 0.141ns (35.962%)  route 0.251ns (64.038%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.077ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.001ns
+    Source Clock Delay      (SCD):    1.445ns
+    Clock Pessimism Removal (CPR):    0.478ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.562     1.445    AdresCounter1/clk_IBUF_BUFG
+    SLICE_X53Y34         FDRE                                         r  AdresCounter1/AdresBuffer_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X53Y34         FDRE (Prop_fdre_C_Q)         0.141     1.586 r  AdresCounter1/AdresBuffer_reg[4]/Q
+                         net (fo=3, routed)           0.251     1.837    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addra[4]
+    RAMB18_X1Y14         RAMB18E1                                     r  DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[9]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.873     2.001    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/clka
+    RAMB18_X1Y14         RAMB18E1                                     r  DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/CLKBWRCLK
+                         clock pessimism             -0.478     1.523    
+    RAMB18_X1Y14         RAMB18E1 (Hold_ramb18e1_CLKBWRCLK_ADDRBWRADDR[9])
+                                                      0.183     1.706    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram
+  -------------------------------------------------------------------
+                         required time                         -1.706    
+                         arrival time                           1.837    
+  -------------------------------------------------------------------
+                         slack                                  0.132    
+
+Slack (MET) :             0.146ns  (arrival time - required time)
+  Source:                 LedDriver1/enableA_reg/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ENBWREN
+                            (rising edge-triggered cell RAMB18E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.299ns  (logic 0.141ns (47.214%)  route 0.158ns (52.786%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.056ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.001ns
+    Source Clock Delay      (SCD):    1.446ns
+    Clock Pessimism Removal (CPR):    0.498ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.563     1.446    LedDriver1/clk_IBUF_BUFG
+    SLICE_X48Y37         FDRE                                         r  LedDriver1/enableA_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X48Y37         FDRE (Prop_fdre_C_Q)         0.141     1.587 r  LedDriver1/enableA_reg/Q
+                         net (fo=2, routed)           0.158     1.745    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/ena
+    RAMB18_X1Y14         RAMB18E1                                     r  DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ENBWREN
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.873     2.001    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/clka
+    RAMB18_X1Y14         RAMB18E1                                     r  DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/CLKBWRCLK
+                         clock pessimism             -0.498     1.503    
+    RAMB18_X1Y14         RAMB18E1 (Hold_ramb18e1_CLKBWRCLK_ENBWREN)
+                                                      0.096     1.599    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram
+  -------------------------------------------------------------------
+                         required time                         -1.599    
+                         arrival time                           1.745    
+  -------------------------------------------------------------------
+                         slack                                  0.146    
+
+Slack (MET) :             0.157ns  (arrival time - required time)
+  Source:                 AdresCounter1/AdresBuffer_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[7]
+                            (rising edge-triggered cell RAMB18E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.417ns  (logic 0.141ns (33.812%)  route 0.276ns (66.188%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.077ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.001ns
+    Source Clock Delay      (SCD):    1.445ns
+    Clock Pessimism Removal (CPR):    0.478ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.562     1.445    AdresCounter1/clk_IBUF_BUFG
+    SLICE_X53Y34         FDRE                                         r  AdresCounter1/AdresBuffer_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X53Y34         FDRE (Prop_fdre_C_Q)         0.141     1.586 r  AdresCounter1/AdresBuffer_reg[2]/Q
+                         net (fo=3, routed)           0.276     1.862    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addra[2]
+    RAMB18_X1Y14         RAMB18E1                                     r  DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[7]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.873     2.001    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/clka
+    RAMB18_X1Y14         RAMB18E1                                     r  DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/CLKBWRCLK
+                         clock pessimism             -0.478     1.523    
+    RAMB18_X1Y14         RAMB18E1 (Hold_ramb18e1_CLKBWRCLK_ADDRBWRADDR[7])
+                                                      0.183     1.706    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram
+  -------------------------------------------------------------------
+                         required time                         -1.706    
+                         arrival time                           1.862    
+  -------------------------------------------------------------------
+                         slack                                  0.157    
+
+Slack (MET) :             0.184ns  (arrival time - required time)
+  Source:                 AdresCounter1/AdresBuffer_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[6]
+                            (rising edge-triggered cell RAMB18E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.444ns  (logic 0.141ns (31.749%)  route 0.303ns (68.251%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.077ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.001ns
+    Source Clock Delay      (SCD):    1.445ns
+    Clock Pessimism Removal (CPR):    0.478ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.562     1.445    AdresCounter1/clk_IBUF_BUFG
+    SLICE_X53Y34         FDRE                                         r  AdresCounter1/AdresBuffer_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X53Y34         FDRE (Prop_fdre_C_Q)         0.141     1.586 r  AdresCounter1/AdresBuffer_reg[1]/Q
+                         net (fo=3, routed)           0.303     1.889    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addra[1]
+    RAMB18_X1Y14         RAMB18E1                                     r  DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[6]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.873     2.001    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/clka
+    RAMB18_X1Y14         RAMB18E1                                     r  DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/CLKBWRCLK
+                         clock pessimism             -0.478     1.523    
+    RAMB18_X1Y14         RAMB18E1 (Hold_ramb18e1_CLKBWRCLK_ADDRBWRADDR[6])
+                                                      0.183     1.706    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram
+  -------------------------------------------------------------------
+                         required time                         -1.706    
+                         arrival time                           1.889    
+  -------------------------------------------------------------------
+                         slack                                  0.184    
+
+Slack (MET) :             0.188ns  (arrival time - required time)
+  Source:                 AdresCounter1/AdresBuffer_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[8]
+                            (rising edge-triggered cell RAMB18E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.448ns  (logic 0.141ns (31.460%)  route 0.307ns (68.540%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.077ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.001ns
+    Source Clock Delay      (SCD):    1.445ns
+    Clock Pessimism Removal (CPR):    0.478ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.562     1.445    AdresCounter1/clk_IBUF_BUFG
+    SLICE_X53Y34         FDRE                                         r  AdresCounter1/AdresBuffer_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X53Y34         FDRE (Prop_fdre_C_Q)         0.141     1.586 r  AdresCounter1/AdresBuffer_reg[3]/Q
+                         net (fo=3, routed)           0.307     1.893    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addra[3]
+    RAMB18_X1Y14         RAMB18E1                                     r  DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[8]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.873     2.001    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/clka
+    RAMB18_X1Y14         RAMB18E1                                     r  DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/CLKBWRCLK
+                         clock pessimism             -0.478     1.523    
+    RAMB18_X1Y14         RAMB18E1 (Hold_ramb18e1_CLKBWRCLK_ADDRBWRADDR[8])
+                                                      0.183     1.706    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram
+  -------------------------------------------------------------------
+                         required time                         -1.706    
+                         arrival time                           1.893    
+  -------------------------------------------------------------------
+                         slack                                  0.188    
+
+Slack (MET) :             0.204ns  (arrival time - required time)
+  Source:                 AdresCounter1/AdresBuffer_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[5]
+                            (rising edge-triggered cell RAMB18E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.465ns  (logic 0.141ns (30.348%)  route 0.324ns (69.652%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.077ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.001ns
+    Source Clock Delay      (SCD):    1.445ns
+    Clock Pessimism Removal (CPR):    0.478ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.562     1.445    AdresCounter1/clk_IBUF_BUFG
+    SLICE_X51Y34         FDRE                                         r  AdresCounter1/AdresBuffer_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X51Y34         FDRE (Prop_fdre_C_Q)         0.141     1.586 r  AdresCounter1/AdresBuffer_reg[0]/Q
+                         net (fo=4, routed)           0.324     1.910    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addra[0]
+    RAMB18_X1Y14         RAMB18E1                                     r  DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRBWRADDR[5]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.873     2.001    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/clka
+    RAMB18_X1Y14         RAMB18E1                                     r  DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/CLKBWRCLK
+                         clock pessimism             -0.478     1.523    
+    RAMB18_X1Y14         RAMB18E1 (Hold_ramb18e1_CLKBWRCLK_ADDRBWRADDR[5])
+                                                      0.183     1.706    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram
+  -------------------------------------------------------------------
+                         required time                         -1.706    
+                         arrival time                           1.910    
+  -------------------------------------------------------------------
+                         slack                                  0.204    
+
+Slack (MET) :             0.223ns  (arrival time - required time)
+  Source:                 LedDriver1/enableB_reg/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/REGCEAREGCE
+                            (rising edge-triggered cell RAMB18E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.298ns  (logic 0.128ns (42.980%)  route 0.170ns (57.020%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.059ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.004ns
+    Source Clock Delay      (SCD):    1.446ns
+    Clock Pessimism Removal (CPR):    0.498ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.563     1.446    LedDriver1/clk_IBUF_BUFG
+    SLICE_X48Y37         FDRE                                         r  LedDriver1/enableB_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X48Y37         FDRE (Prop_fdre_C_Q)         0.128     1.574 r  LedDriver1/enableB_reg/Q
+                         net (fo=3, routed)           0.170     1.744    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/enb
+    RAMB18_X1Y14         RAMB18E1                                     r  DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/REGCEAREGCE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.876     2.004    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/clkb
+    RAMB18_X1Y14         RAMB18E1                                     r  DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/CLKARDCLK
+                         clock pessimism             -0.498     1.506    
+    RAMB18_X1Y14         RAMB18E1 (Hold_ramb18e1_CLKARDCLK_REGCEAREGCE)
+                                                      0.015     1.521    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram
+  -------------------------------------------------------------------
+                         required time                         -1.521    
+                         arrival time                           1.744    
+  -------------------------------------------------------------------
+                         slack                                  0.223    
+
+Slack (MET) :             0.225ns  (arrival time - required time)
+  Source:                 LedDriver1/LedAdresBuffer_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[5]
+                            (rising edge-triggered cell RAMB18E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.493ns  (logic 0.141ns (28.609%)  route 0.352ns (71.391%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.084ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.004ns
+    Source Clock Delay      (SCD):    1.441ns
+    Clock Pessimism Removal (CPR):    0.478ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.558     1.441    LedDriver1/clk_IBUF_BUFG
+    SLICE_X45Y32         FDRE                                         r  LedDriver1/LedAdresBuffer_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y32         FDRE (Prop_fdre_C_Q)         0.141     1.582 r  LedDriver1/LedAdresBuffer_reg[0]/Q
+                         net (fo=5, routed)           0.352     1.934    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addrb[0]
+    RAMB18_X1Y14         RAMB18E1                                     r  DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/ADDRARDADDR[5]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.876     2.004    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/clkb
+    RAMB18_X1Y14         RAMB18E1                                     r  DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/CLKARDCLK
+                         clock pessimism             -0.478     1.526    
+    RAMB18_X1Y14         RAMB18E1 (Hold_ramb18e1_CLKARDCLK_ADDRARDADDR[5])
+                                                      0.183     1.709    DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram
+  -------------------------------------------------------------------
+                         required time                         -1.709    
+                         arrival time                           1.934    
+  -------------------------------------------------------------------
+                         slack                                  0.225    
+
+Slack (MET) :             0.236ns  (arrival time - required time)
+  Source:                 LedDriver1/Bit_counter_reg[13]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LedDriver1/Bit_counter_reg[14]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.341ns  (logic 0.265ns (77.613%)  route 0.076ns (22.387%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.956ns
+    Source Clock Delay      (SCD):    1.443ns
+    Clock Pessimism Removal (CPR):    0.513ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.560     1.443    LedDriver1/clk_IBUF_BUFG
+    SLICE_X40Y37         FDRE                                         r  LedDriver1/Bit_counter_reg[13]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y37         FDRE (Prop_fdre_C_Q)         0.141     1.584 r  LedDriver1/Bit_counter_reg[13]/Q
+                         net (fo=3, routed)           0.076     1.661    LedDriver1/Bit_counter_reg_n_0_[13]
+    SLICE_X40Y37         CARRY4 (Prop_carry4_DI[0]_O[1])
+                                                      0.124     1.785 r  LedDriver1/Bit_counter0_carry__2/O[1]
+                         net (fo=1, routed)           0.000     1.785    LedDriver1/data0[14]
+    SLICE_X40Y37         FDRE                                         r  LedDriver1/Bit_counter_reg[14]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.829     1.956    LedDriver1/clk_IBUF_BUFG
+    SLICE_X40Y37         FDRE                                         r  LedDriver1/Bit_counter_reg[14]/C
+                         clock pessimism             -0.513     1.443    
+    SLICE_X40Y37         FDRE (Hold_fdre_C_D)         0.105     1.548    LedDriver1/Bit_counter_reg[14]
+  -------------------------------------------------------------------
+                         required time                         -1.548    
+                         arrival time                           1.785    
+  -------------------------------------------------------------------
+                         slack                                  0.236    
+
+Slack (MET) :             0.244ns  (arrival time - required time)
+  Source:                 LedDriver1/Bit_counter_reg[19]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LedDriver1/Bit_counter_reg[20]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.349ns  (logic 0.268ns (76.846%)  route 0.081ns (23.154%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.958ns
+    Source Clock Delay      (SCD):    1.444ns
+    Clock Pessimism Removal (CPR):    0.514ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.561     1.444    LedDriver1/clk_IBUF_BUFG
+    SLICE_X40Y38         FDRE                                         r  LedDriver1/Bit_counter_reg[19]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y38         FDRE (Prop_fdre_C_Q)         0.141     1.585 r  LedDriver1/Bit_counter_reg[19]/Q
+                         net (fo=3, routed)           0.081     1.666    LedDriver1/Bit_counter_reg_n_0_[19]
+    SLICE_X40Y38         CARRY4 (Prop_carry4_DI[2]_O[3])
+                                                      0.127     1.793 r  LedDriver1/Bit_counter0_carry__3/O[3]
+                         net (fo=1, routed)           0.000     1.793    LedDriver1/data0[20]
+    SLICE_X40Y38         FDRE                                         r  LedDriver1/Bit_counter_reg[20]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=217, routed)         0.831     1.958    LedDriver1/clk_IBUF_BUFG
+    SLICE_X40Y38         FDRE                                         r  LedDriver1/Bit_counter_reg[20]/C
+                         clock pessimism             -0.514     1.444    
+    SLICE_X40Y38         FDRE (Hold_fdre_C_D)         0.105     1.549    LedDriver1/Bit_counter_reg[20]
+  -------------------------------------------------------------------
+                         required time                         -1.549    
+                         arrival time                           1.793    
+  -------------------------------------------------------------------
+                         slack                                  0.244    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         sys_clk_pin
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { clk }
+
+Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location       Pin
+Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.576         10.000      7.424      RAMB18_X1Y14   DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/CLKARDCLK
+Min Period        n/a     RAMB18E1/CLKBWRCLK  n/a            2.576         10.000      7.424      RAMB18_X1Y14   DualPortRam/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram/CLKBWRCLK
+Min Period        n/a     BUFG/I              n/a            2.155         10.000      7.845      BUFGCTRL_X0Y0  clk_IBUF_BUFG_inst/I
+Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X51Y38   AdresCounter1/AdresBuffer_reg[17]/C
+Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X53Y38   AdresCounter1/AdresBuffer_reg[18]/C
+Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X53Y38   AdresCounter1/AdresBuffer_reg[19]/C
+Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X53Y34   AdresCounter1/AdresBuffer_reg[1]/C
+Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X53Y38   AdresCounter1/AdresBuffer_reg[20]/C
+Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X51Y39   AdresCounter1/AdresBuffer_reg[21]/C
+Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X53Y39   AdresCounter1/AdresBuffer_reg[22]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X53Y34   AdresCounter1/AdresBuffer_reg[1]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X53Y35   AdresCounter1/AdresBuffer_reg[5]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X53Y35   AdresCounter1/AdresBuffer_reg[6]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X53Y35   AdresCounter1/AdresBuffer_reg[7]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X51Y35   AdresCounter1/AdresBuffer_reg[8]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X53Y36   AdresCounter1/AdresBuffer_reg[9]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X51Y36   AdresCounter1/lastButtonState_reg/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X48Y35   LedDriver1/teller04s_reg[25]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X50Y35   LedDriver1/teller50s_reg[26]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X50Y35   LedDriver1/teller50s_reg[27]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X51Y38   AdresCounter1/AdresBuffer_reg[17]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X53Y38   AdresCounter1/AdresBuffer_reg[18]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X53Y38   AdresCounter1/AdresBuffer_reg[19]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X53Y38   AdresCounter1/AdresBuffer_reg[20]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X51Y39   AdresCounter1/AdresBuffer_reg[21]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X53Y39   AdresCounter1/AdresBuffer_reg[22]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X53Y39   AdresCounter1/AdresBuffer_reg[23]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X53Y39   AdresCounter1/AdresBuffer_reg[24]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X53Y40   AdresCounter1/AdresBuffer_reg[25]/C
+High Pulse Width  Fast    FDRE/C              n/a            0.500         5.000       4.500      SLICE_X40Y35   LedDriver1/Bit_counter_reg[8]/C
+
+
+

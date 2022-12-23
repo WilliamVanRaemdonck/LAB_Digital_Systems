@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../DS2_Project.srcs/sources_1/new/Clock_Enabler.vhd" \
+"../../../../DS2_Project.srcs/sources_1/new/Top.vhd" \
+
+# Do not sort compile order
+nosort
