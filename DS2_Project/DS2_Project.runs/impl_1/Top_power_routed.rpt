@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Mon Dec 19 14:44:01 2022
+| Date             : Sat Dec 24 15:06:22 2022
 | Host             : W-Acer-Laptop running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_power_routed.rpt -pb Top_power_summary_routed.pb -rpx Top_power_routed.rpx
 | Design           : Top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.076        |
+| Total On-Chip Power (W)  | 0.077        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.004        |
+| Dynamic (W)              | 0.005        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.6         |
@@ -53,16 +53,16 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      449 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      152 |     20800 |            0.73 |
-|   CARRY4       |    <0.001 |       52 |      8150 |            0.64 |
-|   Register     |    <0.001 |      215 |     41600 |            0.52 |
+| Slice Logic    |    <0.001 |      513 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      169 |     20800 |            0.81 |
+|   CARRY4       |    <0.001 |       60 |      8150 |            0.74 |
+|   Register     |    <0.001 |      248 |     41600 |            0.60 |
 |   Others       |     0.000 |        8 |       --- |             --- |
-| Signals        |    <0.001 |      395 |       --- |             --- |
-| Block RAM      |     0.001 |      0.5 |        50 |            1.00 |
-| I/O            |    <0.001 |       26 |       106 |           24.53 |
+| Signals        |    <0.001 |      457 |       --- |             --- |
+| Block RAM      |     0.002 |      0.5 |        50 |            1.00 |
+| I/O            |     0.001 |       26 |       106 |           24.53 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.076 |          |           |                 |
+| Total          |     0.077 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.013 |       0.004 |      0.010 |
+| Vccint    |       1.000 |     0.014 |       0.004 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -141,10 +141,10 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| Top                    |     0.004 |
-|   DualPortRam          |     0.001 |
-|     U0                 |     0.001 |
-|       inst_blk_mem_gen |     0.001 |
+| Top                    |     0.005 |
+|   DualPortRam          |     0.002 |
+|     U0                 |     0.002 |
+|       inst_blk_mem_gen |     0.002 |
 |   LedDriver1           |     0.002 |
 +------------------------+-----------+
 

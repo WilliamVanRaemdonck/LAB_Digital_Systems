@@ -21,8 +21,16 @@ end LedDriver;
 
 architecture Behavioral of LedDriver is
 --FSM
-type State_t is (StartUp,Read,Reset,Running,T0H,T0L,T1H,T1L);
+type State_t is (StartUp,Read,Reset,Running,T0H,T0L,T1H,T1L,Wait2clk,Wait2clkStart);
 signal FSM_State_LedDriver : State_t;
+--StartUp: Led Dirver start in deze state en geeft een inititele waarde aan signalen en integers
+--Read: Lees de data voor één led uit de Dual Port Ram
+--Reset: Hou de data lijn low voor 500us 
+--Running: Bekijk of we naar de reset state moeten of een '1' of '0' moeten doorsturen
+--T0H, T0L: Stuur een '0' door
+--T1H, T1L: Stuur een '1' door
+--Wait2clkStart: Startup state, We komen hier ook na reset om zeker te zijn dat alle data juist staat
+--Wait2clk: 2 clks wachten om de data uit de ram te halen en de databuffer juist te zetten 
 
 --delays
 constant    clock_frequency            :   integer    := 100e6;
@@ -42,6 +50,11 @@ signal      teller085s                 :   integer     := 0;
 signal      required_frequency085s     :   integer     := 1200000;    -- 0.85µs
 constant    required_cycles085s        :   integer     := integer(clock_frequency/required_frequency085s);
 
+--0.000001µs delay
+signal      tellerWait2clk             :   integer     := 0;
+signal      required_frequencyWait2clk :   integer     := 50000000;   --40ns
+constant    required_cyclesWait2clk    :   integer     := integer(clock_frequency/required_frequencyWait2clk);
+
 signal      Bit_counter                :   integer     := 23; 
 signal      LedAdresBuffer             :   integer     := 0;
 
@@ -50,7 +63,6 @@ signal      dataBuffer                 :   std_logic_vector(23 downto 0);
 begin
 
 AdresOut <= std_logic_vector(to_unsigned(LedAdresBuffer, AdresOut'length)); 
--- transformeren naar een 24Bit waarde
 
 PROCESS(clk, DataIn)
     begin
@@ -61,11 +73,13 @@ PROCESS(clk, DataIn)
                         teller04s   <= 0;
                         teller085s  <= 0;
                         teller50s   <= 0;
-                                
-                        if LedAdresBuffer >= 18 then
+                        tellerWait2clk <= 0;
+                        
+                        if LedAdresBuffer >= 19 then
                             FSM_State_LedDriver <= Reset;
                         else             
-                            --reset counter                 
+                            enableB <= '0';
+                            enableA <= '1';                
                             if Bit_counter = 0 then
                                 if dataBuffer(Bit_counter) = '0' then
                                     LedAdresBuffer <= LedAdresBuffer + 1;
@@ -85,37 +99,54 @@ PROCESS(clk, DataIn)
                                     FSM_State_LedDriver <= T1H;
                                 end if; 
                             end if;
-                        end if;               
+                        end if;  
+                                     
+                    when Wait2clk =>
+                        if (required_cyclesWait2clk-1) = tellerWait2clk then
+                            FSM_State_LedDriver <= Running;
+                        else
+                            tellerWait2clk <= tellerWait2clk + 1;
+                        end if; 
+                        
+                    when Wait2clkStart =>
+                        if (required_cyclesWait2clk-1) = tellerWait2clk then
+                            FSM_State_LedDriver <= Read;
+                        else
+                            tellerWait2clk <= tellerWait2clk + 1;
+                        end if; 
                         
                     when StartUp =>
                         --tellers
                         teller04s   <= 0;
                         teller085s  <= 0;
                         teller50s   <= 0;
+                        tellerWait2clk <= 0;
                         
                         --signals
-                        dataBuffer  <= B"000000000000000000000000";
                         Bit_counter <= 23;
+                        enableB <= '1';
+                        enableA <= '0';
                         
                         --output
                         DataOut <= '0';
-                        enableB <= '1';
-                        enableA <= '0';
-                        FSM_State_LedDriver <= Read;
+
+                        FSM_State_LedDriver <= Wait2clkStart;
                     
                     when Read =>
-                        dataBuffer <= DataIn(15 downto 11) & b"000" & DataIn(10 downto 6) & b"000" & DataIn(5 downto 1) & b"000";
+                        tellerWait2clk <= 0;
                         enableB <= '0';
                         enableA <= '1';
-                        FSM_State_LedDriver <= Running;
+                        -- transformeren naar een 24Bit waarde
+                        dataBuffer <= DataIn(15 downto 11) & b"000" & DataIn(10 downto 6) & b"000" & DataIn(5 downto 1) & b"000";
+                        FSM_State_LedDriver <= Wait2clk;
                     
                     when Reset => 
                         Dataout <= '0';
-                        enableB <= '0';
-                        enableA <= '1';
+                        enableB <= '1';
+                        enableA <= '0';
                         if (required_cycles50s-1) = teller50s then
                             LedAdresBuffer <= 0;
-                            FSM_State_LedDriver <= Read;
+                            FSM_State_LedDriver <= Wait2clkStart;
                         else
                             teller50s <= teller50s + 1;
                         end if; 
@@ -123,7 +154,7 @@ PROCESS(clk, DataIn)
                     when T0H =>
                         Dataout <= '1';
                         enableB <= '1';
-                        enableA <= '0';
+                        enableA <= '0'; 
                         if (required_cycles04s-1) = teller04s then
                             FSM_State_LedDriver <= T0L;
                         end if;
@@ -139,7 +170,7 @@ PROCESS(clk, DataIn)
                     when T1H =>
                         Dataout <= '1';
                         enableB <= '1';
-                        enableA <= '0';
+                        enableA <= '0'; 
                         if (required_cycles085s-1) = teller085s then
                             FSM_State_LedDriver <= T1L;
                         end if;

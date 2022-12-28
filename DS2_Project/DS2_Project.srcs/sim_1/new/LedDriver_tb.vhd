@@ -8,7 +8,7 @@ architecture Behavioral of LedDriver_tb is
     signal DataOut  : std_logic; 
     signal clk      : std_logic;
     signal AdresOut : STD_LOGIC_VECTOR (4 downto 0);
-    signal DataIn   : STD_LOGIC_VECTOR (15 downto 1);
+    signal DataIn   : STD_LOGIC_VECTOR (14 downto 0);
 begin
      
 DUT : entity work.LedDriver
@@ -23,9 +23,9 @@ the_stimuli: process
 begin
     clk     <= '0';
     --AdresOut <= B"00000";
-    --Datain <= B"100000000000000";
-    Datain <= B"111111111111111";
-       
+    Datain <= "100000000011111";
+    --Datain <= B"111111111111111";
+      
     wait for 10ns;
     clk <= not clk;
     wait for 10ns;

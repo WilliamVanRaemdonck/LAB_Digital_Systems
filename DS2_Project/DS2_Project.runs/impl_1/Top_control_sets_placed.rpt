@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Mon Dec 19 14:43:43 2022
+| Date         : Sat Dec 24 15:06:04 2022
 | Host         : W-Acer-Laptop running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Top_control_sets_placed.rpt
 | Design       : Top
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    10 |
-| Unused register locations in slices containing registers |    17 |
+| Number of unique control sets                            |    12 |
+| Unused register locations in slices containing registers |    24 |
 +----------------------------------------------------------+-------+
 
 
@@ -35,10 +35,10 @@ Table of Contents
 | Fanout | Control Sets |
 +--------+--------------+
 |      2 |            1 |
-|      4 |            1 |
-|      6 |            1 |
+|      3 |            1 |
+|      4 |            2 |
 |     15 |            1 |
-|    16+ |            6 |
+|    16+ |            7 |
 +--------+--------------+
 
 
@@ -48,31 +48,33 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               6 |            3 |
+| No           | No                    | No                     |               3 |            2 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |               6 |            3 |
+| Yes          | No                    | No                     |              25 |            9 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             203 |           61 |
+| Yes          | Yes                   | No                     |             220 |           65 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+---------------------------------------+---------------------------------------+------------------+----------------+
-|  Clock Signal  |             Enable Signal             |            Set/Reset Signal           | Slice Load Count | Bel Load Count |
-+----------------+---------------------------------------+---------------------------------------+------------------+----------------+
-|  clk_IBUF_BUFG | LedDriver1/DataOut_i_1_n_0            |                                       |                1 |              2 |
-|  clk_IBUF_BUFG | LedDriver1/Bit_counter[4]_i_1_n_0     |                                       |                2 |              4 |
-|  clk_IBUF_BUFG |                                       |                                       |                3 |              6 |
-|  clk_IBUF_BUFG | LedDriver1/dataBuffer_0               | LedDriver1/dataBuffer0                |                3 |             15 |
-|  clk_IBUF_BUFG | LedDriver1/Bit_counter[4]_i_1_n_0     | LedDriver1/Bit_counter[31]_i_1_n_0    |                8 |             28 |
-|  clk_IBUF_BUFG | AdresCounter1/AdresBuffer             | sw_IBUF[0]                            |               14 |             32 |
-|  clk_IBUF_BUFG | LedDriver1/LedAdresBuffer[31]_i_2_n_0 | LedDriver1/LedAdresBuffer[31]_i_1_n_0 |                9 |             32 |
-|  clk_IBUF_BUFG | LedDriver1/teller04s[31]_i_2_n_0      | LedDriver1/teller04s[31]_i_1_n_0      |                9 |             32 |
-|  clk_IBUF_BUFG | LedDriver1/teller085s[31]_i_1_n_0     | LedDriver1/teller04s[31]_i_1_n_0      |                9 |             32 |
-|  clk_IBUF_BUFG | LedDriver1/teller50s[31]_i_2_n_0      | LedDriver1/teller50s[31]_i_1_n_0      |                9 |             32 |
-+----------------+---------------------------------------+---------------------------------------+------------------+----------------+
++----------------+----------------------------------------------------------+---------------------------------------+------------------+----------------+
+|  Clock Signal  |                       Enable Signal                      |            Set/Reset Signal           | Slice Load Count | Bel Load Count |
++----------------+----------------------------------------------------------+---------------------------------------+------------------+----------------+
+|  clk_IBUF_BUFG | LedDriver1/DataOut_i_1_n_0                               |                                       |                1 |              2 |
+|  clk_IBUF_BUFG |                                                          |                                       |                2 |              3 |
+|  clk_IBUF_BUFG | LedDriver1/Bit_counter[31]_i_2_n_0                       |                                       |                2 |              4 |
+|  clk_IBUF_BUFG | LedDriver1/FSM_sequential_FSM_State_LedDriver[3]_i_1_n_0 |                                       |                2 |              4 |
+|  clk_IBUF_BUFG | LedDriver1/dataBuffer_0                                  |                                       |                4 |             15 |
+|  clk_IBUF_BUFG | LedDriver1/Bit_counter[31]_i_2_n_0                       | LedDriver1/Bit_counter[31]_i_1_n_0    |                8 |             28 |
+|  clk_IBUF_BUFG | LedDriver1/teller085s[31]_i_2_n_0                        | LedDriver1/teller085s[31]_i_1_n_0     |                9 |             32 |
+|  clk_IBUF_BUFG | LedDriver1/teller50s[31]_i_2_n_0                         | LedDriver1/teller50s[31]_i_1_n_0      |                9 |             32 |
+|  clk_IBUF_BUFG | LedDriver1/tellerWait2clk[31]_i_2_n_0                    | LedDriver1/tellerWait2clk[31]_i_1_n_0 |                9 |             32 |
+|  clk_IBUF_BUFG | AdresCounter1/AdresBuffer                                | sw_IBUF[0]                            |               12 |             32 |
+|  clk_IBUF_BUFG | LedDriver1/LedAdresBuffer[31]_i_2_n_0                    | LedDriver1/LedAdresBuffer[31]_i_1_n_0 |                9 |             32 |
+|  clk_IBUF_BUFG | LedDriver1/teller04s[31]_i_1_n_0                         | LedDriver1/teller50s[31]_i_1_n_0      |                9 |             32 |
++----------------+----------------------------------------------------------+---------------------------------------+------------------+----------------+
 
 

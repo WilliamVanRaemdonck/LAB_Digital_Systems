@@ -54,22 +54,24 @@ COMPONENT blk_mem_gen_0
   );
 END COMPONENT;
 --Signals
-Signal DataToLedDriver      : std_Logic_Vector(15 downto 1);
 
+-- Dual Port Ram signalen en vectoren
+Signal DataToLedDriver      : std_Logic_Vector(15 downto 1);
 Signal adresRamA            : std_Logic_Vector(4 downto 0);
 Signal adresRamB            : std_Logic_Vector(4 downto 0);
-
 signal WriteRead            : std_Logic_Vector(0 downto 0);
-
-signal output               : std_logic;
 signal enableA              : std_logic;
 signal enableB              : std_logic;
+--output signal to LED strip
+signal output               : std_logic;
 
 begin
---    Clock_Enabler1: Clock_Enabler   port map (clk => clk, LEDclk => LEDclk);
+    --    Clock_Enabler1: Clock_Enabler   port map (clk => clk, LEDclk => LEDclk);
+    -- Leest de B kant van de Dual Port Ram in.
     LedDriver1: LedDriver           port map (DataIn => DataToLedDriver, AdresOut => adresRamB, clk => clk, enableA => enableA, enableB => enableB, DataOut => output);
+    -- Gaat het adres van de A kant incrementen als er op butnC gedrukt wordt
     AdresCounter1: AdresCounter     port map (sw0 => sw(0), btnC => btnC, clk => clk, Adres => adresRamA);
-    
+    -- Dual Port Ram
     DualPortRam : blk_mem_gen_0
         PORT MAP (
         clka => clk,
@@ -82,9 +84,10 @@ begin
         addrb => adresRamB,
         doutb => DataToLedDriver
     );
-    
+    -- byte write enable
     WriteRead(0) <= '1';
     
+    -- output en debug lijnen
     JA(7) <= output;
     JA(6) <= output;
 end structural;
